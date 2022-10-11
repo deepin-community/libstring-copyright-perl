@@ -1,0 +1,183 @@
+libstring-copyright-perl (0.003011-1) unstable; urgency=medium
+
+  * update copyright info:
+    + generally license as AGPL-3+ (not GPL-3+)
+    + fix reference system-included Artistic license
+    + update coverage
+  * build-depend on and recommend libre-engine-re2-perl
+  * build-depend on libtest-without-module-perl
+  * drop obsolete lintian overrides for GPL-3+ License-Reference field
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 05 Sep 2021 17:48:44 +0200
+
+libstring-copyright-perl (0.003010-1) unstable; urgency=medium
+
+  [ upstream ]
+  * mew release(s)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 29 Aug 2021 06:58:34 +0200
+
+libstring-copyright-perl (0.003008-1) unstable; urgency=medium
+
+  [ upstream ]
+  * mew release
+
+  [ Jonas Smedegaard ]
+  * build-depend on libtest2-suite-perl
+  * use debhelper compatibility level 13 (not 12)
+  * declare compliance with Debian Policy 4.6.0
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 18 Aug 2021 09:08:17 +0200
+
+libstring-copyright-perl (0.003007-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * use debhelper compatibility level 12 (not 9)
+  * build-depend on debhelper-compat (not debhelper)
+  * set upstream metadata fields:
+    Bug-Database Repository Repository-Browse
+
+  [ Jonas Smedegaard ]
+  * simplify source helper script copyright-check
+  * copyright info: update coverage
+  * declare compliance with Debian Policy 4.5.1
+  * enable autopkgtest
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 16 Aug 2021 04:40:40 +0200
+
+libstring-copyright-perl (0.003006-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Fix declare dependency on Number::Range at runtime
+      (not only for tests).
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ Jonas Smedegaard ]
+  * Simplify rules:
+    + Do copyright-check in maintainer script (not during build).
+    + Stop resolve (build-)dependencies in rules file.
+    + Use short-form dh sequencer (not cdbs).
+      Stop build-depend on cdbs.
+  * Stop build-depend on dh-buildinfo.
+  * Declare compliance with Debian Policy 4.2.1.
+  * Set Rules-Requires-Root: no.
+  * Drop obsolete lintian override regarding debhelper 9.
+  * Tighten lintian overrides regarding License-Reference.
+  * Update watch file:
+    + Fix typo in usage comment.
+    + Use substitution strings.
+  * Wrap and sort control file.
+  * Update copyright info:
+    + Update alternate source URLs.
+    + Extend coverage for main upstream author.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 04 Nov 2018 01:52:22 +0100
+
+libstring-copyright-perl (0.003005-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    + Fix skip some pseudosign chatter, and skip single question mark
+      after copyright signs.
+      Closes: Bug#838896. Thanks to Dominique Dumont.
+    + Fix skip chatter after boilerplate.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 07 Dec 2016 02:05:55 +0100
+
+libstring-copyright-perl (0.003004-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    + Fix avoid regex modifier r (available only since Perl 5.14).
+    + Add TODO file.
+    + Fix remove POD mentions or subs for unimplemented features.
+    + Suppress "assigned" and "generated" as chatter.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 01 Oct 2016 14:00:36 +0200
+
+libstring-copyright-perl (0.003003-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    + Fix reset detected chatter at newline (regression since 0.002000).
+      Closes: Bug#836832. Thanks to Dominique Dumont.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 07 Sep 2016 17:01:33 +0200
+
+libstring-copyright-perl (0.003002-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    Highlights:
+    + Fix avoid misdetecting bogus multi-range year spans.
+    + Fix strip owner intro (e.g. "by ").
+    + Fix suppress eq as chatter.
+      Thanks to Petter Reinholdtsen.
+
+  [ Jonas Smedegaard ]
+  * (Build-)depend on libnumber-range-perl.
+  * Avoid build-depending on devscripts.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 07 Sep 2016 13:20:01 +0200
+
+libstring-copyright-perl (0.003001-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    Highlights:
+    + Fix relax detection of owner to permit prefix (for styled names
+      like "(URW)++").
+    + Improve cleanup of "all rights reserved" boilerplate to not
+      necessarily be last.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 22 Aug 2016 00:00:35 +0200
+
+libstring-copyright-perl (0.003000-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    Highlights:
+    + Add format option.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 13 Aug 2016 01:54:45 +0200
+
+libstring-copyright-perl (0.002001-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    Highlights:
+    + Refactor and improve parser.
+    + Implement optional threshold at build time, using Exporter::Tiny
+      (previously did the equivalent of a hardcoded threshold_after=5).
+
+  [ Jonas Smedegaard ]
+  * (Build-)depend on libexporter-tiny-perl.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 11 Aug 2016 12:09:40 +0200
+
+libstring-copyright-perl (0.001002-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    Highlights:
+    + Stop custom-decode encoded copyright sign.
+    + Include copyright sign when stringifying.
+    + Detect alternative representations for copyright sign and hyphen.
+    + Fix typo in regex: Misdetected some discussions about copyright as
+      copyright statement.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 24 Jul 2016 19:25:47 +0200
+
+libstring-copyright-perl (0.001-1) unstable; urgency=low
+
+  * Initial packaging release.
+    Closes: bug#832092.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 22 Jul 2016 11:41:18 +0200

@@ -1,0 +1,4 @@
+# run "uscan --report" to check or "gbp import-orig --uscan" to update
+version=4
+https://metacpan.org/release/String-Copyright \
+ .*/String-Copyright@ANY_VERSION@@ARCHIVE_EXT@

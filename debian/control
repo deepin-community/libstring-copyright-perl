@@ -1,0 +1,33 @@
+Source: libstring-copyright-perl
+Section: perl
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13),
+ libexporter-tiny-perl,
+ libnumber-range-perl,
+ libre-engine-re2-perl <!nocheck>,
+ libtest-without-module-perl <!nocheck>,
+ libtest2-suite-perl <!nocheck>,
+ perl,
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Jonas Smedegaard <dr@jones.dk>,
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libstring-copyright-perl.git
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libstring-copyright-perl
+Homepage: https://metacpan.org/pod/String::Copyright
+Rules-Requires-Root: no
+Testsuite: autopkgtest-pkg-perl
+
+Package: libstring-copyright-perl
+Architecture: all
+Depends:
+ libexporter-tiny-perl,
+ libnumber-range-perl,
+ ${misc:Depends},
+ ${perl:Depends},
+Recommends:
+ libre-engine-re2-perl,
+Description: representation of text-based copyright statements
+ String::Copyright Parses common styles of copyright statements and
+ serializes in normalized format.

@@ -1,0 +1,260 @@
+String-Copyright
+================
+
+Created:      2016-07-21
+Home page:    <https://metacpan.org/pod/String::Copyright>
+Home page:    <https://metacpan.org/release/String-Copyright>
+Bug tracker:  <https://bugs.debian.org/cgi-bin/pkgreport.cgi?pkg=libstring-copyright-perl>
+Maintainer:   Jonas Smedegaard (JONASS) <jonass@cpan.org>
+
+0.003011	2021-09-04
+
+ [ Documentation ]
+ - add Purism SPC as copyright holder
+
+ [ Test Suite ]
+ - teach author test pod-spell about the word 'Affero'
+
+ [ Packaging ]
+ - runtime-recommend re::engine::RE2
+ - skip kwalitee test: fails to recognize AGPL licensing
+ - test-require Test::Without::Module
+
+ [ Other ]
+ - detect '\(co' (© in roff markup) as identifier
+ - detect pseudo-sign after years
+ - detect real copyright preceded by bogus (have bogus match be non-greedy)
+ - detect vague sign '-C-' as identifier, except standalone
+ - relicense project as AGPL-3-or-newer
+ - skip identifier followed by ' dates '
+ - skip identifier followed by ' for '
+ - skip non-indentifier followed by ' This '
+ - skip non-indentifier followed by ' of '
+ - skip non-range '19xx'
+ - skip pseudo-sign chatter of single character in (at least ending) parens
+ - skip pseudo-sign followed by ' all begin '
+ - tighten to detect only vague year as owner (not other strings beginning
+   with dash)
+ - treat leading dash with space around as delimiter (not part of owner)
+ - use re::engine::RE2 when available
+
+0.003010	2021-08-28
+
+ - relax to cover double colon or colon preceded by space
+ - skip non-identifier ' for copyright'
+ - skip non-identifiers 'copyright sign ' 'copyright symbol ' 'copyright
+   text '
+
+0.003009	2021-08-28
+
+ - skip bogus pseudo-sign chatter '(c) You must'
+ - skip dummy year
+ - skip non-owner starting with
+   are/disclaimer/if/interest/permission/treaty
+ - skip non-owner starting with (non-delimiting) comma
+ - skip non-owner the library/software, then comma
+ - skip nonidentifier 'Copyright Act'
+ - skip nonidentifier 'we copyright'
+
+0.003008	2021-08-18
+
+ [ Packaging ]
+ - require Test2::V1 (not Test::More)
+
+ [ Other ]
+ - detect identifier 'copyright: (C)'
+ - require word boundary after literal copyright as identifier
+ - rewrite tests to use Test2::V1
+ - skip non-identifier '_copyright'
+ - skip non-identifier 'copyright applies'
+ - skip non-identifier 'copyright at'
+ - skip non-identifier 'copyright block'
+ - skip non-identifier 'copyright or'
+ - skip non-identifier 'copyright tag'
+ - skip non-identifier 'copyright transfer'
+ - skip non-identifier 'copyright-' (other than 'copyright-holder')
+ - skip non-identifier 'no copyright'
+
+0.003007	2021-08-16
+
+ [ Bug Fixes ]
+ - silence warning at duplicate year or single-year range
+
+ [ Documentation ]
+ - fix typo in example code
+
+ [ Test Suite ]
+ - test identifiers
+ - test skipped initial owner characters
+ - tighten TODO test succeeding since v0.003005
+
+ [ Other ]
+ - detect {c} (i.e. braces-wrapped c, supplementing parens-wrapped c) as
+   identifier
+ - skip dollar or percentage sign as initial owner character
+ - slightly simplify regexp variable signs_and_more_re
+ - stop precompile intermediate regexp variables
+
+0.003006	2018-09-27
+
+ [ Bug Fixes ]
+ - Fix declare dependency on Number::Range at runtime (not only for tests).
+   Perl Ancar++
+
+ [ Other ]
+ - Tidy spaces.
+
+0.003005	2016-11-30
+
+ [ Bug Fixes ]
+ - Fix skip chatter after boilerplate.
+ - Fix skip some pseudosign chatter, and skip single question mark after
+   copyright signs (possibly fallout from broken converted copyright sign).
+   Dominique Dumont++
+
+ [ Test Suite ]
+ - Add tests for broken copyright sign and boilerplate chatter.
+
+0.003004	2016-09-23
+
+ [ Bug Fixes ]
+ - Fix avoid regex modifier r (available only since Perl 5.14).
+
+ [ Documentation ]
+ - Add TODO file.
+ - Fix remove POD mentions or subs for unimplemented features.
+
+ [ Other ]
+ - Suppress "assigned" and "generated" as chatter.
+
+0.003003	2016-09-07
+
+ [ Bug Fixes ]
+ - Fix reset detected chatter at newline (regression since 0.002000).
+   Dominique Dumont++
+
+0.003002	2016-09-07
+
+ [ Bug Fixes ]
+ - Fix avoid misdetecting bogus multi-range year spans.
+ - Fix strip owner intro (e.g. "by ").
+ - Fix suppress eq as chatter.
+   Petter Reinholdtsen++
+
+ [ Other ]
+ - Capture each year span.
+ - Shorten regexes $blank_or_break_re $comma_re and make more greedy.
+ - Use Number::Range to normalize years.
+
+0.003001	2016-08-21
+
+ [ Bug Fixes ]
+ - Fix relax detection of owner to permit prefix (for styled names like
+   "(URW)++").
+
+ [ Other ]
+ - Improve cleanup of "all rights reserved" boilerplate to not necessarily
+   be last.
+
+0.003000	2016-08-13
+
+ [ Documentation ]
+ - Fix list example option inside threshold header in POD.
+
+ [ Other ]
+ - Added: Add format option.
+ - Drop undocumented blocks sub.
+ - Keep years and owners separate internally.
+ - Strip "All rights reserved" boilerplate.
+
+0.002001	2016-08-04
+
+ [ Bug Fixes ]
+ - Fix chatter detection to handle double whitespace.
+
+0.002000	2016-08-04
+
+ [ Test Suite ]
+ - Extend testsuite with (some yet unsupported) corner cases.
+
+ [ Packaging ]
+ - Use Exporter::Tiny.
+
+ [ Other ]
+ - Added: Implement threshold options, with none by default (was hardcoded
+   threshold_after=5).
+ - Misc. improvements e.g. in detecting non-sign chatter, delimiting
+   characters and whitespace.
+ - Parse multiple lines at a time.
+
+0.001005	2016-07-29
+
+ [ Test Suite ]
+ - Adjust and extend testsuite.
+
+ [ Other ]
+ - Detect chatter before signs or owners.
+ - Detect comma before years.
+ - Fix stop exclude define's (misses statements embedded in e.g. "banner"
+   define); instead tighten sign detection to require space around
+   pseudo-sign (c).
+ - Limit chatter detection to non-email-like strings generally (not only
+   for info/information).
+ - Relax years detection to tolerate initial commas.
+ - Tighten owner detection to require non-punctuation as initial character.
+
+0.001004	2016-07-27
+
+ [ Bug Fixes ]
+ - Fix use re 'eval'.
+
+0.001003	2016-07-26
+
+ [ Bug Fixes ]
+ - Use Test::Script to ensure correct perl invokes script in tests.
+   Slaven Rezic++
+
+ [ Test Suite ]
+ - Add a few tests for year-like owner field.
+ - Extend testsuite.
+
+ [ Other ]
+ - Fix extend block into next line(s) only when purely years detected (not
+   on any - possibly owner - string ending in digits).
+ - Fix stop include next line based on it starting with digits (only on
+   previous line ending with digits).
+ - Improve parsing of year-like strings: Treat as owner (instead of
+   dropping) in more corner cases.
+ - Refactor parsing to use pre-compiled regular expressions.
+ - Tighten parser slightly regarding corner cases of years tied up in
+   line-wrapping.
+ - Tighten parsing to consider only space and tab (not other whitespace)
+   where appropriate.
+
+0.001002	2016-07-24
+
+ [ BACK COMPAT ]
+ - Avoid superfluous regex modifiers /l /i /x.
+
+ [ Bug Fixes ]
+ - Fix typo in regex: Misdetected some discussions about copyright as
+   copyright statement.
+
+ [ Test Suite ]
+ - Improve range tests: Separate multi-range test from new test of newline
+   before year-delimiting comma.
+
+ [ Other ]
+ - Updated: Detect alternative representations for copyright sign and
+   hyphen-minus.
+ - Updated: Include copyright sign when stringifying..
+
+0.001001	2016-07-22
+
+ [ REGRESSIONS ]
+ - Fix stop custom-decode encoded copyright sign.
+
+ [ Documentation ]
+ - Add notes to POD on possible encoding issues.
+
+0.001	2016-07-22	Initial release.
